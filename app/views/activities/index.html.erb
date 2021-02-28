@@ -1,0 +1,24 @@
+<div class="header">
+  <h1>Fitofit</h1>
+  <h2>Your activity health tracker!</h2>
+</div>
+
+<div class="weekly-bar">
+  <h3>Weekly result! </h3>
+  <p>You walked <strong><%= distance_this_week %></strong> kilometers this week!</p>
+  <div class="buttons">
+    <%= link_to "Add a new Activity", new_activity_path, class: 'btn' %>
+    <%= link_to "Edit existing entries", all_activities_path, class: 'btn' %>
+  </div>
+</div>
+
+<div class="current-month">
+  <h3>This month's total results!</h3>
+  <% all_activities.each do |day|  %>
+  <div class="specific-day">
+    <p><%= "#{day[0]}" %></p>
+    <p><%= "#{day[1]} kms" %></p>
+  </div>
+  <% end %>
+</div>
+

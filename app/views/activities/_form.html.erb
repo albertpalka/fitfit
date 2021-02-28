@@ -1,0 +1,15 @@
+<%= form_with model: @activity, class: 'form' do |form| %>
+  <div>
+    <%= form.label :original_location %><br>
+    <%= form.text_field :original_location, class: 'text-field input', placeholder: "Plac Europejski 2, Warszawa, Polska" %>
+  </div>
+
+  <div>
+    <%= form.label :destination_location %><br>
+    <%= form.text_field :destination_location, class: 'text-field input', placeholder: "Plac Defilad 1, Warszawa, Polska" %>
+  </div>
+
+  <div>
+    <%= submit_tag 'Submit', class: 'btn' %>
+  </div>
+<% end %>

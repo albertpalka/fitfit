@@ -1,0 +1,9 @@
+<h1><%= @activity.created_at.strftime("%e. %B") %></h1>
+<p>Original Location: <%= @activity.original_location %></p>
+<p>Destination Location: <%= @activity.destination_location %></p>
+<p>Distance (km): <%= @activity.distance %></p>
+
+<p><%= link_to 'Back to Main Page', root_path %></p>
+<p><%= link_to 'Edit this activity', edit_activity_path %></p>
+<p><%= link_to "Destroy", activity_path(@activity), method: :delete, data: { confirm: "Are you sure?" } %></p>
+

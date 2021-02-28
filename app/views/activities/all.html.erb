@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>All added activities</h1>
+  <p><%= link_to "Go back to main page", activities_path, class: 'btn' %></p>
+
+  <div class="activities-list">
+    <% @activities.each do |a| %>
+    <h2><%= a.created_at.strftime("%e. %B") %></h2>
+      <div class="activity-details">
+        <p><strong>Distance:</strong><%= " #{a.distance} km" %></p>
+        <p><%= link_to 'Edit Activity', edit_activity_path(a), class: 'btn' %></p>
+        <p><%= link_to "Destroy", activity_path(a), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn' %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
